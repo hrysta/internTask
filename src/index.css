@@ -5,9 +5,71 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: large;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.moreBtn {
+  box-sizing: border-box;
+  height: 130px;
+  padding: 10px;
+  background-color: #2c3339;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5%;
+  padding: auto;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.VisibleElement {
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  border:solid 1px transparent;
+  border-radius: 5%;
+  margin: 5px;
+}
+
+.VisibleElement:hover {
+  border:solid 1px #2c3339;
+  box-sizing: border-box;
+}
+
+.selected {
+  background: #2c3339;
+  color: #fff;
+}
+
+.HiddenElement {
+  cursor: pointer;
+  border:solid 1px transparent;
+  box-sizing: border-box;
+  border-radius: 5%;
+}
+
+.HiddenElement:hover {
+  border:solid 1px #2c3339;
+  box-sizing: border-box;
+}
+
+.MoreMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-Index: 1;
+    background: white;
+    box-shadow: 0 0 4px rgb(209, 205, 205);
+    border-radius: 5%;
+    padding: 10px;
+}
+
+span {
+  margin: 10px 5px 5px 10px;
+  transform: rotateZ(270deg);
 }
