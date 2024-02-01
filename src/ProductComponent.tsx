@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
+import './index.scss';
 
 interface ProductComponentProps {
   id: number;

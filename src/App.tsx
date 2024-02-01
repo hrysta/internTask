@@ -1,6 +1,7 @@
 // App.tsx
 import React, { useState, useEffect } from 'react';
 import ProductComponent from './ProductComponent';
+import './index.scss';
 
 interface Product {
   id: number;
@@ -80,7 +81,7 @@ const App: React.FC = () => {
             className="moreBtn"
               onClick={() => setShowMoreMenu(!showMoreMenu)}
             >
-                <div>More {showMoreMenu ? <span>&#x2715;</span> : <span>&#10096;</span>}</div>
+                <div>More {showMoreMenu ? <span>&#x2715;</span> : <span className='arrow'>&#10096;</span>}</div>
  {getMoreButtonText()}
 
 
