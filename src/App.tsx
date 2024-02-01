@@ -64,7 +64,9 @@ const App: React.FC = () => {
               cursor: 'pointer',
             border: 'none',
           backgroundColor: 'white',
-    color: 'blue'}}
+    color: 'blue',
+  marginRight: '215px'
+  }}
              onClick={handleReset}><h2>Reset</h2></button>
           </div>
         )}
@@ -86,9 +88,11 @@ const App: React.FC = () => {
             <div
             className="moreBtn"
               onClick={() => setShowMoreMenu(!showMoreMenu)}
-            >More {showMoreMenu ? <span>&#x2715;</span> : <span>&#10096;</span>}
-            <br/>
-              {getMoreButtonText()}
+            >
+                <div>More {showMoreMenu ? <span>&#x2715;</span> : <span>&#10096;</span>}</div>
+ {getMoreButtonText()}
+
+
             </div>
             {showMoreMenu && (
               <div
