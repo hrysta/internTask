@@ -25,7 +25,7 @@ const ProductComponent: React.FC<ProductComponentProps> = ({ id, name, image, pr
     setShowPriceTooltip(false);
   };
 
-  const buttonClasses = cn('VisibleElement', {
+  const buttonClasses = cn('visibleElement', {
     'selected': isSelected,
   });
 
@@ -37,24 +37,16 @@ const ProductComponent: React.FC<ProductComponentProps> = ({ id, name, image, pr
       onMouseLeave={handleMouseLeave}
     >
       <div
-      style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
+      style={{
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center'}}
       >
       <img src={image} alt={name} style={{ scale: '60%', objectFit: 'cover' }} />
         {name}
       </div>
       {showPriceTooltip && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '-30%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            background: 'rgba(0, 0, 0, 0.8)',
-            color: 'white',
-            padding: '5px',
-            borderRadius: '5px',
-          }}
-        >
+        <div className='showPriceTooltip'>
           ${price}+
         </div>
       )}

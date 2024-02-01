@@ -1,6 +1,6 @@
 // App.tsx
 import React, { useState, useEffect } from 'react';
-import ProductComponent from './SelectableComponent';
+import ProductComponent from './ProductComponent';
 
 interface Product {
   id: number;
@@ -47,27 +47,18 @@ const App: React.FC = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', width: 'auto'}}>
-      <div style={{ 
-          display: 'flex', 
-          gap: 'auto',
-          alignItems: 'center',
-          width: '100%'
-        }}>
+    <div className='container'>
+      <div className='container_visible'>
           <div>
             <h2>Car type</h2>
           </div>
         { selectedProducts.length > 0 && (
           <div style={{margin: 'auto'}}>
             <button
-             style={{
-              cursor: 'pointer',
-            border: 'none',
-          backgroundColor: 'white',
-    color: 'blue',
-  marginRight: '215px'
-  }}
-             onClick={handleReset}><h2>Reset</h2></button>
+              className='resetBtn'
+              onClick={handleReset}>
+                <h2>Reset</h2>
+            </button>
           </div>
         )}
       </div>
@@ -96,27 +87,18 @@ const App: React.FC = () => {
             </div>
             {showMoreMenu && (
               <div
-              className='MoreMenu'
+              className='moreMenu'
               >
                 {products.slice(4).map((product) => (
-                  <div className='HiddenElement'
+                  <div className='hiddenElementsList'
                   key={product.id}
                   >
                     <label
-                      style={{ 
-                        display: 'flex', 
-                        alignItems: 'center',
-                        justifyContent: 'space-between'
-                      }}>
-                     <div
-                        style={{ 
-                        display: 'flex', 
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        overflow: 'hidden',
-                        whiteSpace: 'nowrap',
-                      }}
+                      className='hiddenElementsList_element'
                     >
+                     <div
+                     className='hiddenElementsList_element--name'
+                     >
                      <input
                         type="checkbox"
                         style={{scale: '130%'}}

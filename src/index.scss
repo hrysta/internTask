@@ -8,7 +8,25 @@ body {
   font-size: large;
   text-align: center;
 }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
 
+  &_visible{
+    display: flex;
+    gap: auto;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.resetBtn {
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  color: blue;
+}
 .moreBtn {
   box-sizing: border-box;
   display: flex;
@@ -29,18 +47,29 @@ body {
   cursor: pointer;
 }
 
-.VisibleElement {
+.visibleElement {
   padding: 10px;
   cursor: pointer;
   position: relative;
   border:solid 1px transparent;
   border-radius: 5%;
   margin: 5px;
-}
-
-.VisibleElement:hover {
+  
+  &:hover {
   border:solid 1px #2c3339;
   box-sizing: border-box;
+  }
+}
+
+.showPriceTooltip {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .selected {
@@ -48,19 +77,33 @@ body {
   color: #fff;
 }
 
-.HiddenElement {
+.hiddenElementsList {
   cursor: pointer;
   border:solid 1px transparent;
   box-sizing: border-box;
   border-radius: 5%;
+
+    &_element {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      &--name {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+  
+    &:hover {
+    border:solid 1px #2c3339;
+    box-sizing: border-box;
+  }
 }
 
-.HiddenElement:hover {
-  border:solid 1px #2c3339;
-  box-sizing: border-box;
-}
-
-.MoreMenu {
+.moreMenu {
     position: absolute;
     top: 100%;
     left: 0;
